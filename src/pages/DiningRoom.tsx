@@ -5,9 +5,9 @@ import { Card } from "@/components/ui/card";
 import { Heart, ShoppingCart } from "lucide-react";
 import tableImage from "@/assets/table-product.jpg";
 import chairImage from "@/assets/chair-product.jpg";
-import diningImage1 from "@assets/stock_images/dining_room_furnitur_66b519f3.jpg";
-import diningImage2 from "@assets/stock_images/dining_room_furnitur_79edcf22.jpg";
-import diningImage3 from "@assets/stock_images/dining_room_furnitur_8d79df73.jpg";
+import diningImage1 from "@/assets/stock_images/dining_room_furnitur_66b519f3.jpg";
+import diningImage2 from "@/assets/stock_images/dining_room_furnitur_79edcf22.jpg";
+import diningImage3 from "@/assets/stock_images/dining_room_furnitur_8d79df73.jpg";
 
 const DiningRoom = () => {
   const products = [

@@ -20,6 +20,9 @@ import SizeGuide from "./pages/SizeGuide";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import OrderConfirmation from "./pages/OrderConfirmation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +44,9 @@ const App = () => (
           <Route path="/bedroom" element={<Bedroom />} />
           <Route path="/dining-room" element={<DiningRoom />} />
           <Route path="/office" element={<Office />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/help-center" element={<HelpCenter />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/returns" element={<Returns />} />

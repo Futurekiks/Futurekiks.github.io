@@ -3,58 +3,77 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 import sofaImage from "@/assets/sofa-product.jpg";
 import chairImage from "@/assets/chair-product.jpg";
 import tableImage from "@/assets/table-product.jpg";
 
 const LivingRoom = () => {
+  const { addItem } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = (product: any) => {
+    addItem(product);
+    toast({
+      title: "Added to Cart",
+      description: `${product.name} has been added to your cart.`,
+    });
+  };
+
   const products = [
     {
-      id: 1,
+      id: "living-1",
       name: "Comfort Sofa",
-      price: "$1,299",
+      price: 1299,
       originalPrice: "$1,599",
       image: sofaImage,
+      category: "living-room",
       description: "Premium comfort sofa perfect for family gatherings"
     },
     {
-      id: 2,
+      id: "living-2",
       name: "Nordic Chair",
-      price: "$299",
+      price: 299,
       originalPrice: "$399",
       image: chairImage,
+      category: "living-room",
       description: "Elegant Nordic-style accent chair with wooden frame"
     },
     {
-      id: 3,
+      id: "living-3",
       name: "Coffee Table",
-      price: "$599",
+      price: 599,
       originalPrice: "$799",
       image: tableImage,
+      category: "living-room",
       description: "Minimalist coffee table with clean lines and storage"
     },
     {
-      id: 4,
+      id: "living-4",
       name: "Luxury Sectional",
-      price: "$2,499",
+      price: 2499,
       originalPrice: "$2,999",
       image: sofaImage,
+      category: "living-room",
       description: "Spacious sectional sofa for large living rooms"
     },
     {
-      id: 5,
+      id: "living-5",
       name: "Accent Chair Set",
-      price: "$499",
+      price: 499,
       originalPrice: "$699",
       image: chairImage,
+      category: "living-room",
       description: "Set of two matching accent chairs in premium fabric"
     },
     {
-      id: 6,
+      id: "living-6",
       name: "Side Table",
-      price: "$199",
+      price: 199,
       originalPrice: "$299",
       image: tableImage,
+      category: "living-room",
       description: "Compact side table perfect for magazines and drinks"
     }
   ];
@@ -91,7 +110,12 @@ const LivingRoom = () => {
                     <Button size="icon" variant="secondary" className="rounded-full shadow-lg">
                       <Heart className="h-4 w-4" />
                     </Button>
-                    <Button size="icon" className="btn-primary rounded-full shadow-lg">
+                    <Button 
+                      size="icon" 
+                      className="btn-primary rounded-full shadow-lg"
+                      onClick={() => handleAddToCart(product)}
+                      data-testid={`button-add-cart-${product.id}`}
+                    >
                       <ShoppingCart className="h-4 w-4" />
                     </Button>
                   </div>
@@ -104,7 +128,7 @@ const LivingRoom = () => {
                   <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl font-bold text-primary">{product.price}</span>
+                      <span className="text-2xl font-bold text-primary">${product.price}</span>
                       <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
                     </div>
                     <Button variant="outline" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">

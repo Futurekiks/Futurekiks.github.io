@@ -5,10 +5,10 @@ import { Card } from "@/components/ui/card";
 import { Heart, ShoppingCart } from "lucide-react";
 import chairImage from "@/assets/chair-product.jpg";
 import tableImage from "@/assets/table-product.jpg";
-import bedroomImage1 from "@assets/stock_images/modern_bedroom_furni_33123a3c.jpg";
-import bedroomImage2 from "@assets/stock_images/modern_bedroom_furni_59d591ce.jpg";
-import bedroomImage3 from "@assets/stock_images/modern_bedroom_furni_290f3ba5.jpg";
-import bedroomImage4 from "@assets/stock_images/modern_bedroom_furni_ed8ea307.jpg";
+import bedroomImage1 from "@/assets/stock_images/modern_bedroom_furni_33123a3c.jpg";
+import bedroomImage2 from "@/assets/stock_images/modern_bedroom_furni_59d591ce.jpg";
+import bedroomImage3 from "@/assets/stock_images/modern_bedroom_furni_290f3ba5.jpg";
+import bedroomImage4 from "@/assets/stock_images/modern_bedroom_furni_ed8ea307.jpg";
 
 const Bedroom = () => {
   const products = [
