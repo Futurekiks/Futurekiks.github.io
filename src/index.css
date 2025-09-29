@@ -1,0 +1,162 @@
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Panto Furniture Design System - Warm, elegant tones for premium furniture */
+
+@layer base {
+  :root {
+    /* Base colors - warm creams and elegant grays */
+    --background: 35 20% 98%;
+    --foreground: 25 15% 15%;
+
+    --card: 35 25% 97%;
+    --card-foreground: 25 15% 15%;
+
+    --popover: 35 25% 97%;
+    --popover-foreground: 25 15% 15%;
+
+    /* Primary - rich walnut brown */
+    --primary: 25 35% 25%;
+    --primary-foreground: 35 20% 98%;
+
+    /* Secondary - warm cream */
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 25 35% 25%;
+
+    /* Muted - soft beige */
+    --muted: 30 25% 90%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Accent - warm gold */
+    --accent: 45 65% 68%;
+    --accent-foreground: 25 35% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 35 20% 98%;
+
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 25 35% 25%;
+
+    --radius: 0.75rem;
+
+    /* Furniture-specific design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(30 25% 96%) 100%);
+    --product-shadow: 0 10px 30px -5px hsl(25 35% 25% / 0.1);
+    --elegant-shadow: 0 20px 40px -10px hsl(25 35% 25% / 0.15);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - sophisticated charcoal with warm accents */
+    --background: 20 15% 8%;
+    --foreground: 35 20% 95%;
+
+    --card: 20 15% 10%;
+    --card-foreground: 35 20% 95%;
+
+    --popover: 20 15% 10%;
+    --popover-foreground: 35 20% 95%;
+
+    --primary: 35 20% 95%;
+    --primary-foreground: 25 35% 25%;
+
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 35 20% 95%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 30 15% 65%;
+
+    --accent: 45 65% 68%;
+    --accent-foreground: 20 15% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 35 20% 95%;
+
+    --border: 20 15% 18%;
+    --input: 20 15% 18%;
+    --ring: 45 65% 68%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom typography for furniture elegance */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  /* Smooth interactions */
+  button, a, [role="button"] {
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer components {
+  .hero-text {
+    @apply text-5xl md:text-7xl font-light tracking-wide;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-light text-primary mb-6;
+  }
+  
+  .elegant-card {
+    @apply bg-card rounded-lg p-6 shadow-[var(--product-shadow)] hover:shadow-[var(--elegant-shadow)] transition-shadow duration-300;
+  }
+
+  .product-card {
+    @apply cursor-pointer overflow-hidden rounded-lg bg-card;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105;
+  }
+
+  .overlay-gradient {
+    @apply bg-gradient-to-t from-black/60 via-black/20 to-transparent;
+  }
+}
