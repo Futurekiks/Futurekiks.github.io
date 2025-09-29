@@ -73,14 +73,15 @@ const Header = () => {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
+                  data-testid={`link-mobile-${item.name.toLowerCase().replace(' ', '-')}`}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="flex items-center space-x-4 pt-4">
                 <Link to="/cart" className="relative">
