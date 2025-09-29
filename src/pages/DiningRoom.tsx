@@ -5,6 +5,9 @@ import { Card } from "@/components/ui/card";
 import { Heart, ShoppingCart } from "lucide-react";
 import tableImage from "@/assets/table-product.jpg";
 import chairImage from "@/assets/chair-product.jpg";
+import diningImage1 from "@assets/stock_images/dining_room_furnitur_66b519f3.jpg";
+import diningImage2 from "@assets/stock_images/dining_room_furnitur_79edcf22.jpg";
+import diningImage3 from "@assets/stock_images/dining_room_furnitur_8d79df73.jpg";
 
 const DiningRoom = () => {
   const products = [
@@ -29,6 +32,7 @@ const DiningRoom = () => {
       name: "Bar Stools",
       price: "$399",
       originalPrice: "$599",
+      image: diningImage1,
       description: "Modern bar stools with adjustable height"
     },
     {
@@ -36,6 +40,7 @@ const DiningRoom = () => {
       name: "Buffet Cabinet",
       price: "$899",
       originalPrice: "$1,199",
+      image: diningImage2,
       description: "Stylish buffet for dining room storage"
     },
     {
@@ -51,6 +56,7 @@ const DiningRoom = () => {
       name: "Bench Seating",
       price: "$299",
       originalPrice: "$399",
+      image: diningImage3,
       description: "Comfortable bench seating for casual dining"
     }
   ];

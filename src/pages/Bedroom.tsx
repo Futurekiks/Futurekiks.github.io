@@ -3,6 +3,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, ShoppingCart } from "lucide-react";
+import chairImage from "@/assets/chair-product.jpg";
+import tableImage from "@/assets/table-product.jpg";
+import bedroomImage1 from "@assets/stock_images/modern_bedroom_furni_33123a3c.jpg";
+import bedroomImage2 from "@assets/stock_images/modern_bedroom_furni_59d591ce.jpg";
+import bedroomImage3 from "@assets/stock_images/modern_bedroom_furni_290f3ba5.jpg";
+import bedroomImage4 from "@assets/stock_images/modern_bedroom_furni_ed8ea307.jpg";
 
 const Bedroom = () => {
   const products = [
@@ -11,6 +17,7 @@ const Bedroom = () => {
       name: "Platform Bed",
       price: "$899",
       originalPrice: "$1,199",
+      image: bedroomImage1,
       description: "Modern platform bed with minimalist design"
     },
     {
@@ -18,6 +25,7 @@ const Bedroom = () => {
       name: "Nightstand Set",
       price: "$399",
       originalPrice: "$599",
+      image: bedroomImage2,
       description: "Matching pair of elegant nightstands"
     },
     {
@@ -25,6 +33,7 @@ const Bedroom = () => {
       name: "Dresser",
       price: "$799",
       originalPrice: "$999",
+      image: bedroomImage3,
       description: "Spacious dresser with smooth-sliding drawers"
     },
     {
@@ -32,6 +41,7 @@ const Bedroom = () => {
       name: "Wardrobe",
       price: "$1,499",
       originalPrice: "$1,899",
+      image: bedroomImage4,
       description: "Large wardrobe with multiple compartments"
     },
     {
@@ -39,6 +49,7 @@ const Bedroom = () => {
       name: "Bedside Table",
       price: "$199",
       originalPrice: "$299",
+      image: tableImage,
       description: "Compact bedside table with drawer storage"
     },
     {
@@ -46,6 +57,7 @@ const Bedroom = () => {
       name: "Vanity Set",
       price: "$699",
       originalPrice: "$899",
+      image: chairImage,
       description: "Elegant vanity with mirror and stool"
     }
   ];
@@ -70,10 +82,13 @@ const Bedroom = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <Card key={product.id} className="product-card group shadow-[var(--product-shadow)] hover:shadow-[var(--elegant-shadow)] transition-all duration-500">
-                <div className="relative overflow-hidden rounded-t-lg bg-muted/30">
-                  <div className="w-full h-80 flex items-center justify-center text-muted-foreground">
-                    <span className="text-lg">Product Image</span>
-                  </div>
+                <div className="relative overflow-hidden rounded-t-lg">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+                    data-testid={`img-product-${product.id}`}
+                  />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                   
                   <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

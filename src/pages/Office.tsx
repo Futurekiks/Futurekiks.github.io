@@ -5,6 +5,10 @@ import { Card } from "@/components/ui/card";
 import { Heart, ShoppingCart } from "lucide-react";
 import chairImage from "@/assets/chair-product.jpg";
 import tableImage from "@/assets/table-product.jpg";
+import officeImage1 from "@assets/stock_images/office_furniture_boo_1166b234.jpg";
+import officeImage2 from "@assets/stock_images/office_furniture_boo_3d66b5f9.jpg";
+import officeImage3 from "@assets/stock_images/office_furniture_boo_ba2ebda0.jpg";
+import officeImage4 from "@assets/stock_images/office_furniture_boo_4ab84e55.jpg";
 
 const Office = () => {
   const products = [
@@ -29,6 +33,7 @@ const Office = () => {
       name: "Bookshelf",
       price: "$599",
       originalPrice: "$799",
+      image: officeImage1,
       description: "Tall bookshelf for office storage and display"
     },
     {
@@ -36,6 +41,7 @@ const Office = () => {
       name: "Conference Table",
       price: "$1,899",
       originalPrice: "$2,399",
+      image: officeImage2,
       description: "Large conference table for meetings"
     },
     {
@@ -43,6 +49,7 @@ const Office = () => {
       name: "Filing Cabinet",
       price: "$399",
       originalPrice: "$549",
+      image: officeImage3,
       description: "Secure filing cabinet with lock"
     },
     {
@@ -50,6 +57,7 @@ const Office = () => {
       name: "Standing Desk",
       price: "$799",
       originalPrice: "$1,099",
+      image: officeImage4,
       description: "Adjustable standing desk for health-conscious work"
     }
   ];

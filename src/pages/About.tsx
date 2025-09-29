@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Award, Users, Leaf, Clock } from "lucide-react";
+import heroImage from "@/assets/hero-furniture.jpg";
 
 const About = () => {
   const features = [
@@ -33,8 +34,16 @@ const About = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-secondary/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 pb-16 bg-secondary/50 relative">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Panto furniture craftsmanship"
+            className="w-full h-full object-cover opacity-10"
+            data-testid="img-about-hero"
+          />
+        </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-light text-primary mb-6">About Panto</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
