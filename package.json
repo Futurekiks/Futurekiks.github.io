@@ -7,8 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build:github": "vite build --mode production",
+    "preview": "vite preview",
+    "preview:github": "vite preview --port 4173",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
